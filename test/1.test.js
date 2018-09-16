@@ -2,7 +2,7 @@ const { findKMaxSort, findKMaxM, findKMaxK } = require('../src/1')
 const expect = require('chai').expect;
 
 
- // N:10000 K:5000 result 4984
+ // N: N个随机数 K: 第K个最大的数 result: 预期结果
 describe('基础算法测试', () => {
     const N = 30000000;
     const K = N/2;
