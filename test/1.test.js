@@ -4,7 +4,7 @@ const expect = require('chai').expect;
 
  // N: N个随机数 K: 第K个最大的数 result: 预期结果
 describe('基础算法测试', () => {
-    const N = 30000000;
+    const N = 10000000;
     const K = N/2;
     const arr = [];
     let result;
