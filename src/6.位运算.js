@@ -5,13 +5,13 @@ const swap = (x, y) => {
 };
 
 const arr_swap = (arr) => {
-    for (let first = 0, last = arr.length - 1; first < last; first++, last--) {
-        arr[last] = arr[first] ^ arr[last];
-        arr[first] = arr[first] ^ arr[last];
-        arr[last] = arr[first] ^ arr[last];
+    for (let a = 0, b = arr.length - 1; a < b; a++, b--) {
+        arr[b] = arr[a] ^ arr[b];
+        arr[a] = arr[a] ^ arr[b];
+        arr[b] = arr[a] ^ arr[b];
     }
 };
 
-const arr = [1,2,3,4,5];
-arr_swap(arr);
-console.log(arr);
+module.exports = {
+    arr_swap,
+}
