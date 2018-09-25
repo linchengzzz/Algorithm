@@ -1,4 +1,4 @@
-const { for1, for2, for3, for4, for5, for6 } = require('../src/10.for');
+const { for1, for2, for3, for4, for5, for6 } = require('../../src/1.java-2/10.for');
 const expect = require('chai').expect;
 
 /**

@@ -1,4 +1,4 @@
-const { findKMaxSort, findKMaxM, findKMaxK } = require('../src/1')
+const { findKMaxSort, findKMaxM, findKMaxK } = require('../../src/1.java-2/1')
 const expect = require('chai').expect;
 
 

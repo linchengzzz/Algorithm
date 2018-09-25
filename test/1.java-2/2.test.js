@@ -1,4 +1,4 @@
-const { searchString } = require('../src/2.字母游戏');
+const { searchString } = require('../../src/1.java-2/2.字母游戏');
 const expect = require('chai').expect;
 
 describe('寻找字母测试', () => {

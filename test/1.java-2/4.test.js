@@ -1,4 +1,4 @@
-const { fib1, fib2 } = require('../src/4.递归测试');
+const { fib1, fib2 } = require('../../src/1.java-2/4.递归测试');
 const expect = require('chai').expect;
 
 describe('递归测试', () => {

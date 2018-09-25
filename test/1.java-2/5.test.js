@@ -1,4 +1,4 @@
-const { maxSubSum, maxSubSum2, maxSubSum3, maxSubSum4 } = require('../src/5.最大子序列');
+const { maxSubSum, maxSubSum2, maxSubSum3, maxSubSum4 } = require('../../src/1.java-2/5.最大子序列');
 const expect = require('chai').expect;
 
 /**

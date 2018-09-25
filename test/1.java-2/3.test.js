@@ -1,4 +1,4 @@
-const { perm } = require('../src/3.递归全排列');
+const { perm } = require('../../src/1.java-2/3.递归全排列');
 const expect = require('chai').expect;
 
 describe('递归的全排列', () => {

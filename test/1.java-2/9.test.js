@@ -1,4 +1,4 @@
-const { gcd } = require('../src/9.最大公因数');
+const { gcd } = require('../../src/1.java-2/9.最大公因数');
 const expect = require('chai').expect;
 
 /**

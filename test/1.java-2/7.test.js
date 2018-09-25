@@ -1,4 +1,4 @@
-const { sum1, sum2 } = require('../src/7.求和');
+const { sum1, sum2 } = require('../../src/1.java-2/7.求和');
 const expect = require('chai').expect;
 
 /**

@@ -1,4 +1,4 @@
-const { search1, search2 } = require('../src/8.折半查找');
+const { search1, search2 } = require('../../src/1.java-2/8.折半查找');
 const expect = require('chai').expect;
 
 /**
