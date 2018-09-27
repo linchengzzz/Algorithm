@@ -61,7 +61,7 @@ const maxSubSum3 = (arr, left, right) => {
             rightBorderMaxSum = rightBorderSum;
         }
     }
-    // 返回左序列 或 右序列 或 连续序列 的 最大值\
+    // 返回左序列 或 右序列 或 连续序列 的 最大值
     return Math.max(leftMaxSum, rightMaxSum, leftBorderMaxSum + rightBorderMaxSum);
 };
 const maxSubSum4 = (arr) => {
