@@ -12,7 +12,6 @@ const expect = require('chai').expect;
 describe('位运算测试', () => {
     let arr = [];
     let num = 10000000;
-    let newArr = []
     before(() => {
         for (let i = 0; i < num; i++) {
             arr.push(Math.round(Math.random() * num));
