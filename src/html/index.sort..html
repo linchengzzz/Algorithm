@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        #container>div {
+            width: 100vw;
+            height: 400px;
+        }
+    </style>
+    <script src="./echarts.min.js"></script>
+    <script src="./Echart.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- <div class="insertSort"></div> -->
+        <div class="shellSort"></div>
+        <!-- <div class="heapSort"></div> -->
+        <div class="quickSort"></div>
+    </div>
+    <script>
+        // 初始化参数
+        const N = 300;
+        const arr = [];
+        for (let i = 0; i < N; i++) {
+            arr.push(Math.round(Math.random() * N));
+        }
+        // 插入排序
+        const insertSort = (arr) => {
+            let j = 0;
+            let count = 0;
+            for (let i = 1; i < arr.length; i++) {
+                const tmp = arr[i];
+                for (j = i; j > 0 && arr[j - 1] > tmp; j--) {
+                    arr[j] = arr[j - 1];
+                    insertChart.changeChart([...arr]);
+                }
+                arr[j] = tmp;
+            }
+        };
+        // 希尔排序
+        const shellSort = (arr) => {
+            let j;
+            for (let gap = arr.length / 2; gap > 0; gap = parseInt(gap / 2)) {
+                for (let i = gap; i < arr.length; i++) {
+                    const tmp = arr[i];
+                    for (j = i; j >= gap && arr[j - gap] > tmp; j -= gap) {
+                        arr[j] = arr[j - gap];
+                        shellChart.changeChart([...arr]);
+                    }
+                    arr[j] = tmp;
+                }
+            }
+        };
+        // 堆排序
+        const leftChild = (i) => 2 * i + 1;
+        const percDown = (a, i, n) => {
+            let child;
+            let tmp;
+            for (tmp = a[i]; leftChild(i) < n; i = child) {
+                child = leftChild(i);
+                if (child != n - 1 && a[child + 1] > a[child]) {
+                    child++;
+                }
+                if (a[child] > tmp) {
+                    a[i] = a[child];
+                    heapChart.changeChart([...a]);
+                } else {
+                    break;
+                }
+            }
+            a[i] = tmp;
+        };
+        const heapSort = (a) => {
+            for (let i = parseInt(a.length / 2 - 1); i >= 0; i--) {
+                percDown(a, i, a.length);
+            }
+            for (let i = a.length - 1; i > 0; i--) {
+                [a[0], a[i]] = [a[i], a[0]];
+                percDown(a, 0, i);
+            }
+        };
+        // 快速排序
+        function quickSort(arr) {
+            // 交换
+            function swap(arr, a, b) {
+                var temp = arr[a];
+                arr[a] = arr[b];
+                arr[b] = temp;
+                quickChart.changeChart([...arr]);
+            }
+            // 分区
+            function partition(arr, left, right) {
+                var pivot = arr[right];
+                var storeIndex = left;
+                for (var i = left; i < right; i++) {
+                    if (arr[i] < pivot) {
+                        swap(arr, storeIndex, i);
+                        storeIndex++;
+                    }
+                }
+                swap(arr, right, storeIndex);
+                return storeIndex;
+            }
+            function sort(arr, left, right) {
+                if (left > right) {
+                    
+                    return;
+                }
+                var storeIndex = partition(arr, left, right);
+                sort(arr, left, storeIndex - 1);
+                sort(arr, storeIndex + 1, right);
+            }
+            sort(arr, 0, arr.length - 1);
+            return arr;
+        }
+        
+        // 插入排序渲染 
+        // const insertChart = new Echart(document.querySelector('.insertSort'), '#c23531');
+        // insertChart.init('插入排序', [...arr]);
+        // insertSort([...arr]);
+        // 希尔排序渲染 
+        const shellChart = new Echart(document.querySelector('.shellSort'), '#2f4554');
+        shellChart.init('希尔排序', [...arr]);
+        shellSort([...arr]);
+        // 堆排序 
+        // const heapChart = new Echart(document.querySelector('.heapSort'), '#61a0a8');
+        // heapChart.init('堆排序', [...arr]);
+        // heapSort([...arr]);
+        // 快速排序 
+        const quickChart = new Echart(document.querySelector('.quickSort'), '#d48265');
+        quickChart.init('快速排序', [...arr]);
+        quickSort([...arr]);
+    </script>
+</body>
+
+</html>
