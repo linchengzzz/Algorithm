@@ -9,7 +9,7 @@
 
 // 输入 n * n 的矩阵 点P的位置
 const n = 5;
-const p = [2, 2];
+const p = [4, 2];
 
 // 初始化矩阵数组
 const matrix = [];
@@ -103,17 +103,8 @@ function next(x, y) {
     let result = `(${steps[0][0]}, ${steps[0][1]})`;
     let step = 1;
     for (var i = 1; i < steps.length; i++) {
-        const nextX = steps[i][0];
-        const nextY = steps[i][1];
-        const prevX = steps[i - 1][0];
-        const prevY = steps[i - 1][1];
-        // 判断是否为相邻点
-        if ((nextX === prevX && Math.abs(nextY - prevY) === 1) || (nextY === prevY && Math.abs(nextX - prevX) === 1)) {
-            step++;
-            result += ` -> (${steps[i][0]}, ${steps[i][1]})`;
-        } else {
-            break;
-        }
+        step++;
+        result += ` -> (${steps[i][0]}, ${steps[i][1]})`;
     }
 
     if (step < n * n - 1) {
@@ -148,6 +139,8 @@ function _main() {
     }
     if (start) {
         console.log('--- 暂未找到 ---');
+    } else {
+        console.log(`--- 共找到 ${count} 条路径 ---`);
     }
 }
 
