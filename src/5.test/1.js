@@ -36,3 +36,5 @@
 // });
 // 1 7 6 8 2 4 9 11 3 10 5 12
 console.log(0.1 + 0.2);
+
+console.log('hello, %c world', 'color: red');
