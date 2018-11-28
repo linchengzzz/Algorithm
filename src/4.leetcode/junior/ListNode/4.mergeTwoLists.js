@@ -37,6 +37,7 @@ var mergeTwoLists = function(l1, l2) {
         } else {
             curNode.next = l2;
             curNode = curNode.next;
+
             l2 = l2.next;
         }
     }
